@@ -60,7 +60,6 @@ public class StringCalculator {
 
 
         String[] arrNumbers = num.replace("[", "]").split("\n",2);
-        System.out.println(Arrays.toString(arrNumbers));
         arrNumbers[1] = arrNumbers[1].replace("\n", ",");
 
         ArrayList<String> separatorInExpression = new ArrayList<>();
