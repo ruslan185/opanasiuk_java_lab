@@ -4,32 +4,49 @@ class Main {
 
     public static void main(String[] args) {
 
-//        double[][] A = {{1, 2, 3, 4}, {4, 5, 6, 7}, {7, 8, 9, 10}};
-//        double[][] B = {{1, 2, 3, 2, 1}};
+        Integer[][] A = {{1, 2, 3, 4}, {4, 5, 6, 7}, {7, 8, 9, 10}};
+        Double[][] B = {{1., 2., 3.}, {4., 5., 6.}};
+        String[][] C = {{"a", "b"}, {"c", "d"}};
+        Double[][] E = {{1., 2., 3., 2., 1.}};
 
-//        Matrix x = new Matrix(3,3);
-//        x.show();
-//        Matrix y = new Matrix(A);
-//        y.show();
-//
-//        y.getElement(0,0);
-//        y.getRow(1);
-//        y.getColumn(2);
-//        y.getDim();
-//        y.equals(x);
-//
-//        Matrix z = new Matrix(y);
-//        z.show();
-//        y.hashCode(z);
-//
-//        Matrix b = new Matrix(B);
-//        b.diagonal();
-//
-//        Matrix n = y.plus(z);
-//        n.show();
-//
-//        Matrix m = y.Multiplication(5);
-//        m.show();
+        ImmutableGenericMatrix<Integer> a = new ImmutableGenericMatrix<>(A);
+        ImmutableGenericMatrix<Double> b = new ImmutableGenericMatrix<>(B);
+        ImmutableGenericMatrix<String> c = new ImmutableGenericMatrix<>(C);
+        ImmutableGenericMatrix<Double> e = new ImmutableGenericMatrix<>(E);
+        a.show();
+        b.show();
+        c.show();
+
+        ImmutableGenericMatrix<Double> x = new ImmutableGenericMatrix<>(2,3);
+        x.show();
+
+        ImmutableGenericMatrix<String> d = new ImmutableGenericMatrix<>(c);
+        d.show();
+
+        System.out.println(c.getElement(0, 1));
+        a.getRow(2);
+        a.getRow(2);
+        a.getColumn(2);
+        System.out.println(a.getDim());
+
+        System.out.println(a.equals(b));
+        System.out.println(c.equals(d));
+
+        System.out.println(b.hashCode(e));
+        System.out.println(c.hashCode(d));
+
+        ImmutableGenericMatrix<Double> f = e.diagonal();
+        f.show();
+
+        ImmutableGenericMatrix<String> n = c.plus(d);
+        n.show();
+
+        ImmutableGenericMatrix<Integer> a2 = a.Multiplication(5);
+        ImmutableGenericMatrix<Double> b2 = b.Multiplication(5);
+        ImmutableGenericMatrix<String> c2 = c.Multiplication(5);
+        a2.show();
+        b2.show();
+        c2.show();
 
 
     }
