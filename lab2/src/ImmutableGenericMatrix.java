@@ -3,7 +3,7 @@ import java.util.Arrays;
 public final class ImmutableGenericMatrix<T> {
     private final int M; //кількість рядочків
     private final int N; //кількість стовпчиків
-    private final T[][] data; //матриця
+    final T[][] data; //матриця
 
     public ImmutableGenericMatrix(int m, int n) {
         this.M = m;
@@ -21,6 +21,7 @@ public final class ImmutableGenericMatrix<T> {
 
     //    копіювання матриці
     public ImmutableGenericMatrix(ImmutableGenericMatrix<T> temp) {this(temp.data);}
+
 
     //виведення матриці
     public void show() {
@@ -65,6 +66,12 @@ public final class ImmutableGenericMatrix<T> {
         for (int j = 0; j < this.M; j++) retValThis += Arrays.hashCode(this.data[j]);
         return retValtemp == retValThis;
     }
+
+//    public int hashCode2(ImmutableGenericMatrix<T> temp) {
+//        int retValThis = 0;
+//        for (int j = 0; j < this.M; j++) retValThis += Arrays.hashCode(this.data[j]);
+//        return retValThis;
+//    }
 
     //створення діагональної матриці
     public ImmutableGenericMatrix<T> diagonal(){
